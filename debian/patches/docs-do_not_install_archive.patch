@@ -1,0 +1,19 @@
+Description: Do not include a static copy of "archive"
+ Upstream configured sphinx to do a static copy of the "archive" directory,
+ which is useless in the contet of the Debian package as it only contains
+ outdated versions of the documentation.
+Author: Michael Fladischer <FladischerMichael@fladi.at>
+Last-Update: 2013-11-26
+Forwarded: not-needed
+
+--- a/docs/source/conf.py
++++ b/docs/source/conf.py
+@@ -134,7 +134,7 @@
+ # Add any paths that contain custom static files (such as style sheets) here,
+ # relative to this directory. They are copied after the builtin static files,
+ # so a file named "default.css" will overwrite the builtin "default.css".
+-html_static_path = ['../archive']
++#html_static_path = ['../archive']
+ 
+ # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
+ # using the given strftime format.

@@ -1,0 +1,8 @@
+Document: python-django-auth-ldap-doc
+Title: Python Django LDAP Authentication Documentation
+Author: Peter Sagerson
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-django-auth-ldap-doc/html/index.html
+Files: /usr/share/doc/python-django-auth-ldap-doc/html/*.html

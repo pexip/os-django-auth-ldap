@@ -1,0 +1,114 @@
+django-auth-ldap (1.1.7-1) unstable; urgency=low
+
+  [ Michael Fladischer ]
+  * New upstream release (Closes: #678703).
+  * Add python-setuptools to Build-Depends, upstream switched from distutils
+    to setuptools.
+  * Bump python version support to >= 2.5.
+  * Bump dependency on Django to >= 1.3.
+  * Bump Standards-Version to 3.9.5.
+  * Bump debhelper in Build-Depends to >= 8.1.0~.
+  * Drop unnecessary versioned dependencies in Depends and Build-Depends:
+    + python-all
+    + python-ldap
+  * Ommit installing archived documentation:
+    + Add patch docs-do_not_install_archive.patch.
+  * Use locally installed objects.inv for intersphinx mapping:
+    + Add patch docs-use_local_intersphinx_mapping.patch.
+    + Add python-doc to Build-Depends.
+    + Add python-django-doc to Build-Depends.
+  * Format packaging files with wrap-and-sort.
+  * Change documentation source directory for sphinx.
+  * Update years in d/copyright.
+  * Drop temporary fix for PKG-INFO.
+  * Run dh_clean in override target.
+  * Clean django_auth_ldap.egg-info/SOURCES.txt after each build.
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+ -- Michael Fladischer <FladischerMichael@fladi.at>  Tue, 26 Nov 2013 08:57:20 +0100
+
+django-auth-ldap (1.0.19-2) unstable; urgency=low
+
+  * Make dependency on python-django unversioned again.
+
+ -- Michael Fladischer <FladischerMichael@fladi.at>  Sun, 08 Jul 2012 20:03:30 +0200
+
+django-auth-ldap (1.0.19-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fix tests for django (>= 1.4) FTBFS (Closes: #669486).
+  * Bump dependency on python-django to (>= 1.2).
+
+ -- Michael Fladischer <FladischerMichael@fladi.at>  Sun, 08 Jul 2012 14:07:46 +0200
+
+django-auth-ldap (1.0.18-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update years in d/copyright.
+  * Update DEP-5 URL to 1.0.
+  * Bump Standards-Version to 3.9.3.
+
+ -- Michael Fladischer <FladischerMichael@fladi.at>  Fri, 16 Mar 2012 09:28:59 +0100
+
+django-auth-ldap (1.0.14-1) unstable; urgency=low
+
+  * New upstream release.
+  * B-D on python-sphinx (>= 1.0.7+dfsg).
+  * Change order of my name.
+  * Temporary fix for Metadata-Version in django_auth_ldap-1.0.14.egg-
+    info.
+
+ -- Michael Fladischer <FladischerMichael@fladi.at>  Mon, 09 Jan 2012 12:31:28 +0100
+
+django-auth-ldap (1.0.12-1) unstable; urgency=low
+
+  * New upstream release.
+  * Upload to unstable.
+  * Update DEP5 format.
+  * Drop debian/pyversions in favour of XS-Python-Version.
+  * Set PMPT as maintainer and myself as uploader.
+  * Simplify debian/rules by using static settings.py.
+  * Remove bogus docs/._index.rst ahead of building documentation.
+  * Streamline packaging code with wrap-and-sort.
+  * Switch to dh_python2.
+  * Update database settings for unit tests to comply with Django 1.3.
+  * Clean up documentation after build.
+  * Bumped Standards-Version to 3.9.2 (no change necessary).
+  * Use dh_sphinxdoc.
+  * Change build path for documentation.
+  * Ship documentation in separate package.
+  * Use override_dh_auto_build to build documentation.
+  * Update copyright year in d/copyright.
+
+ -- Fladischer Michael <FladischerMichael@fladi.at>  Mon, 03 Oct 2011 07:20:07 +0200
+
+django-auth-ldap (1.0.7-1) experimental; urgency=low
+
+  * New upstream release.
+  * Bumped version of Debian policy compliance to 3.9.1 (nothing to do).
+  * Include documentation. (Closes: #600634)
+
+ -- Fladischer Michael <FladischerMichael@fladi.at>  Thu, 30 Dec 2010 23:19:00 +0100
+
+django-auth-ldap (1.0.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Fladischer Michael <FladischerMichael@fladi.at>  Tue, 22 Jun 2010 10:59:16 +0200
+
+django-auth-ldap (1.0.4-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+  * Add Vcs-* fields.
+  * Set Debian Python Modules Packaging Team as Uploaders.
+  * Use DEP5 for copyright file.
+
+ -- Fladischer Michael <FladischerMichael@fladi.at>  Mon, 07 Jun 2010 08:21:29 +0200
+
+django-auth-ldap (1.0.3-1) unstable; urgency=low
+
+  * Initial release (Closes: #575817)
+
+ -- Fladischer Michael <FladischerMichael@fladi.at>  Fri, 02 Apr 2010 08:48:43 +0200

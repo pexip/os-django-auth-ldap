@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --with=python2,sphinxdoc
+
+.PHONY: override_dh_auto_build
+override_dh_auto_build:
+	PYTHONPATH=. sphinx-build -b html -d docs/.build/.doctrees -N docs/source docs/.build/html
+	dh_auto_build
+
+.PHONY: override_dh_auto_test
+override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	django-admin startproject testproject
+	if [ -d testproject/testproject ]; then \
+		cp debian/settings.py testproject/testproject/settings.py; \
+	else \
+		cp debian/settings.py testproject ; \
+	fi
+	for python in $(shell pyversions -r); do \
+	  rm -f testproject/test.db3 ; \
+	  PYTHONPATH=".:src:testproject" $$python testproject/manage.py syncdb --settings=testproject.settings --noinput ;\
+	  PYTHONPATH=".:src:testproject" $$python testproject/manage.py test --settings=testproject.settings django_auth_ldap ; \
+	done
+	rm -rf testproject
+endif
+
+.PHONY: override_dh_clean
+override_dh_clean:
+	rm -rf docs/.build/
+	dh_clean
